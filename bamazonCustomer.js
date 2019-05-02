@@ -69,7 +69,7 @@ function logListFormat(products, priceArray, quantArray) {
         "*" +
         "$" +
         priceArray[x] +
-        " ".repeat(colSpacer("*$" + priceArray[x].toString())) +
+        " ".repeat(colSpacer("*$" + parseFloat(priceArray[x]).toString())) +
         "*" +
         quantArray[x] +
         " ".repeat(colSpacer(quantArray[x].toString())) +
@@ -92,7 +92,7 @@ function viewProducts() {
     var quantArray = [];
     for (var i = 0; i < results.length; i++) {
       choiceArray.push(results[i].product_name);
-      priceArray.push(results[i].price);
+      priceArray.push(parseFloat(results[i].price));
       quantArray.push(results[i].stock_quantity);
     }
     logListFormat(choiceArray, priceArray, quantArray);
@@ -158,11 +158,11 @@ function buyProduct() {
           if (results[i].product_name === order.choice) {
             totalQ = results[i].stock_quantity;
             pID=results[i].id;
-            pPrice=results[i].price;
+            pPrice=parseFloat(results[i].price);
           }
         }
-        console.log(order.quantity);
-        console.log(totalQ);
+        // console.log(order.quantity);
+        // console.log(totalQ);
 
         if (totalQ < order.quantity) {
           console.log(
