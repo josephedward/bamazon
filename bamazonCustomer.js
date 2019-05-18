@@ -1,6 +1,5 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-// var hOTable=require("handsontable");
 
 // create the connection information for the sql database
 var connection = mysql.createConnection({

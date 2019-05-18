@@ -35,8 +35,6 @@ VALUES ("phone","technology", 600.00, 10);
 INSERT INTO products (product_name, department, price, stock_quantity)
 VALUES ("ghost","supernatural", 3000.00, 2);
 
-INSERT INTO products (product_name, department, price, stock_quantity)
-VALUES ("jesus","deity", 1000000000.00, 1);
 
 INSERT INTO products (product_name, department, price, stock_quantity)
 VALUES ("tin can","sundries", 3.00, 10);

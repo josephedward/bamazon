@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-// var hOTable=require("handsontable");
+
 
 // create the connection information for the sql database
 var connection = mysql.createConnection({
@@ -151,9 +151,10 @@ function viewProducts() {
     }
     logListFormat(choiceArray,deptArray, priceArray, quantArray);
     //ask if they want to buy a product
-   
+    buyChoice();
   });
-  buyChoice();
+
+
 }
 
 
@@ -274,7 +275,9 @@ function addNew(){
         VALUES ("${name}","${dept}", ${price}, ${quant});`, 
         function(err, results) {
             if (err) throw err;
-            buyChoice();
+            console.log("Product added successfully.");
+            viewProducts();
+            // buyChoice();
         });    
 
 
